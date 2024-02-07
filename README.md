@@ -29,4 +29,69 @@ modkit pileup --cpg --ref ${REF} --only-tabs --threads 24 --ignore h --combine-s
 #sbatch --mem=10G --cpus-per-task=25 --time=24:00:00 modkit_hg38_comb.sh SAMPLE_NAME REF BAM_FILE OUT_PATH
 ```
 
+## Parameters
+
+```
+--sample_name : sample name (str)
+
+--r9_modkit : path to R9 bedfile
+
+--r10_modkit : path to R10 bedfile 
+
+--bis_modkit : path to bisulfite bedfile 
+
+--cov_min : minimum coverage threshold, default = 20 (int value)
+
+--cov_max : maximum coverage threshold, default = 200 (int value)
+
+--interval : number of evenly spaced intervals for binning data, default = 10 (ex. 0, 10, 20, 30, ... 100)
+
+--custom_interval : a list of custom unevenly spaced interval values for binning data (ex. [0, 5, 10, 50, 90, 95, 100])
+
+--binning : dataset to bin the graph by , either 'r9', 'r10', or 'Bisulfite' (str value)
+
+--bw : number from 0.0 - 1.0 
+
+--scale : a string value 
+
+--out__dir : path to  
+
+--scale : 
+parser.add_argument('--cov_min', type=int, default=20,
+                    help='The minimum coverage, an integer, default 20, require cov_min <= cov_max.')
+
+parser.add_argument('--cov_max', type=int, default=200,
+                    help='The maximum coverage, an integer, default 200, require cov_min <= cov_max.')
+
+parser.add_argument('--interval', type=int, default=10,
+                    help='The binning interval, an integer, default 10.')
+
+parser.add_argument('--custom_interval', type=list,
+                    help='Custom binning intervals as a list, ex. [0, 5, 10, 20, 30, 40, 50, 60, 70, 80, 90, 95, 100]')
+                    
+parser.add_argument('--bw', type=float, default=0.1,
+                    help='Factor (0.0-1.0) that scales the bandwidth to use more or less smoothing, default is 0.1') 
+                    
+parser.add_argument('--scale', type=str, default='width',
+                    help='Method that normalizes each density to determine the violin’s width. Options are: area (each violin will have the same area), count (the width will be proportional to the number of observations), or width (default; each violin will have the same width).')
+
+parser.add_argument('--r9_modkit', type=str, required=True,
+                    help='The bedfile for r9_modkit, required.')
+
+parser.add_argument('--r10_modkit', type=str, required=True,
+                    help='The bedfile for r10_modkit, required.')
+
+parser.add_argument('--bis_modkit', type=str, required=True,
+                    help='The modkit file for bisulfite sequencing.')
+
+parser.add_argument('--binning', type=str, required=True,
+                   help='Dataset to bin by, must be either R9, R10 or Bisulfite, required')
+
+parser.add_argument('--sample_name', type=str, required=True,
+                    help='sample_name is the title and filename of your image file.')
+
+parser.add_argument('--out_dir', type=str, required=False,
+                    help='out_dir (optional) is the directory to put your image file into.')
+
+args = vars(parser.parse_args())
 
