@@ -32,7 +32,7 @@ modkit pileup --cpg --ref ${REF} --only-tabs --threads 24 --ignore h --combine-s
 ## Parameters
 
 ```
---sample_name : sample name (str)
+--sample_name : sample name (string value)
 
 --r9_modkit : path to R9 bedfile
 
@@ -44,54 +44,32 @@ modkit pileup --cpg --ref ${REF} --only-tabs --threads 24 --ignore h --combine-s
 
 --cov_max : maximum coverage threshold, default = 200 (int value)
 
---interval : number of evenly spaced intervals for binning data, default = 10 (ex. 0, 10, 20, 30, ... 100)
+--interval : number of evenly spaced intervals for binning data, default = 10 (ex. 0, 10, 20, 30, ... 100) (int value)
 
 --custom_interval : a list of custom unevenly spaced interval values for binning data (ex. [0, 5, 10, 50, 90, 95, 100])
 
---binning : dataset to bin the graph by , either 'r9', 'r10', or 'Bisulfite' (str value)
+--binning : dataset to bin the graph by , either 'r9', 'r10', or 'Bisulfite' (string value)
 
---bw : number from 0.0 - 1.0 
+--bw : number from 0.0 - 1.0 (float value) that scales the violin plot bandwidth for more or less smoothing, default = 0.1 (float value)
 
---scale : a string value 
+--scale : method to normalizes each density to determine the violin's width: 'width' = default; all violins have the same, 'area' = all violins have the same area,  = violin widths are proportional to number of observations (string value)
 
---out__dir : path to  
+--out__dir : output directory path
 
---scale : 
-parser.add_argument('--cov_min', type=int, default=20,
-                    help='The minimum coverage, an integer, default 20, require cov_min <= cov_max.')
+```
 
-parser.add_argument('--cov_max', type=int, default=200,
-                    help='The maximum coverage, an integer, default 200, require cov_min <= cov_max.')
+## Sample command 
 
-parser.add_argument('--interval', type=int, default=10,
-                    help='The binning interval, an integer, default 10.')
-
-parser.add_argument('--custom_interval', type=list,
-                    help='Custom binning intervals as a list, ex. [0, 5, 10, 20, 30, 40, 50, 60, 70, 80, 90, 95, 100]')
-                    
-parser.add_argument('--bw', type=float, default=0.1,
-                    help='Factor (0.0-1.0) that scales the bandwidth to use more or less smoothing, default is 0.1') 
-                    
-parser.add_argument('--scale', type=str, default='width',
-                    help='Method that normalizes each density to determine the violin’s width. Options are: area (each violin will have the same area), count (the width will be proportional to the number of observations), or width (default; each violin will have the same width).')
-
-parser.add_argument('--r9_modkit', type=str, required=True,
-                    help='The bedfile for r9_modkit, required.')
-
-parser.add_argument('--r10_modkit', type=str, required=True,
-                    help='The bedfile for r10_modkit, required.')
-
-parser.add_argument('--bis_modkit', type=str, required=True,
-                    help='The modkit file for bisulfite sequencing.')
-
-parser.add_argument('--binning', type=str, required=True,
-                   help='Dataset to bin by, must be either R9, R10 or Bisulfite, required')
-
-parser.add_argument('--sample_name', type=str, required=True,
-                    help='sample_name is the title and filename of your image file.')
-
-parser.add_argument('--out_dir', type=str, required=False,
-                    help='out_dir (optional) is the directory to put your image file into.')
-
-args = vars(parser.parse_args())
+```
+python modkit_methcompare.py \
+--cov_min 20 \
+--cov_max 200 \
+--r9_modkit /Users/gennerrm/Desktop/modkit_files/HG002_R9.hg38.modkit.comb.bed \
+--r10_modkit /Users/gennerrm/Desktop/modkit_files/HG002_R10.hg38.modkit.comb.bed \
+--bis_modkit /Users/gennerrm/Desktop/modkit_files/CpG.gz.bismark.zero.merged.cov \
+--interval 10 \
+--sample_name HG002_bis \
+--binning Bisulfite  \
+--out_dir /Users/gennerrm/Desktop/figs/py_figs/test
+```
 
