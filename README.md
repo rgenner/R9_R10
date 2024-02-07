@@ -76,16 +76,18 @@ python modkit_methcompare.py \
 
 ## Graphs
 
-This program generates three separate graphs that can then be overlaid to form the final figure. 
+The modkit_methcompare.py script generates three separate graphs that can then be overlaid to form the final figure. 
 
-The first graph is a split violin plot of the R9 and R10 methylation proportions when binned by bisulfite intervals: 
+The first graph is a split violin plot of the R9 and R10 methylation proportions binned by bisulfite intervals. 
 ![HG002_bis_VP](https://github.com/rgenner/R9_R10/assets/87498696/e1453298-0103-4c9e-b09c-4184705bdf2c)
 
-The second graph is a line plot with lines connecting the median interval points in each sample. This can be vectorize to overlay the split violin plot. 
+The second graph is a line plot with lines connecting the median interval points in each sample.  
+This can be vectorized to overlay the split violin plot. 
 ![HG002_bis_lines](https://github.com/rgenner/R9_R10/assets/87498696/f64c016c-6ab9-4a33-9735-bcaea68a842d)
 
-The last plot is a panel showing the distribution of CpG site methylation frequencies for each sample. This can be rotated 90 and added to the right side of the split violin graph.
+The last plot is a panel showing the distribution of CpG site methylation frequencies for each sample.  
+This can be rotated 90 and added to the right side of the split violin graph.
 ![HG002_bis_VP_cov](https://github.com/rgenner/R9_R10/assets/87498696/97614943-bbaa-4010-9e57-ac72244dfd64)
 
-
-
+Below is the final figure assembly:
+![HG002_bis_final_VP](https://github.com/rgenner/R9_R10/assets/87498696/cb812069-6732-4159-836f-d804e4e21cc9)
