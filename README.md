@@ -76,3 +76,9 @@ python modkit_methcompare.py \
 
 ![HG002_bis_VP](https://github.com/rgenner/R9_R10/assets/87498696/e1453298-0103-4c9e-b09c-4184705bdf2c)
 
+![HG002_bis_VP_cov](https://github.com/rgenner/R9_R10/assets/87498696/97614943-bbaa-4010-9e57-ac72244dfd64)
+
+![HG002_bis_lines](https://github.com/rgenner/R9_R10/assets/87498696/f64c016c-6ab9-4a33-9735-bcaea68a842d)
+
+
+
