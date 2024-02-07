@@ -71,5 +71,6 @@ python modkit_methcompare.py \
 --sample_name HG002_bis \
 --binning Bisulfite  \
 --out_dir /Users/gennerrm/Desktop/figs/py_figs/test
+
 ```
 
