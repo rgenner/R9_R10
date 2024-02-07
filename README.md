@@ -86,8 +86,9 @@ This can be vectorized to overlay the split violin plot.
 ![HG002_bis_lines](https://github.com/rgenner/R9_R10/assets/87498696/f64c016c-6ab9-4a33-9735-bcaea68a842d)
 
 The last plot is a panel showing the distribution of CpG site methylation frequencies for each sample.  
-This can be rotated 90 and added to the right side of the split violin graph.
-![HG002_bis_VP_cov](https://github.com/rgenner/R9_R10/assets/87498696/97614943-bbaa-4010-9e57-ac72244dfd64)
+This can be rotated 90° and added to the right side of the split violin graph.
+![HG002_bis_VP_cov](https://github.com/rgenner/R9_R10/assets/87498696/b000ec46-0e5b-4ba0-addc-96ba4a59e200)
+
 
 Below is the final figure assembly:
 ![HG002_bis_final_VP](https://github.com/rgenner/R9_R10/assets/87498696/cb812069-6732-4159-836f-d804e4e21cc9)
