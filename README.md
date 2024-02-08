@@ -78,7 +78,7 @@ The first graph is a split violin plot of the R9 and R10 methylation proportions
 
 The second graph is a line plot with lines connecting the median interval points in each sample.  
 This can be vectorized to overlay the split violin plot. 
-![HG002_Bisulfitebins_lines](https://github.com/rgenner/R9_R10/assets/87498696/359fbebd-c344-41f5-b24e-507b1a1a41c2)
+![HG002_Bisulfitebins_lines](https://github.com/rgenner/R9_R10/assets/87498696/d8ded648-e196-4c71-a3ae-0c1c5cca4e0a)
 
 The last plot is a panel showing the distribution of CpG site methylation frequencies for each sample.  
 This can be rotated 90° and added to the right side of the split violin graph.
